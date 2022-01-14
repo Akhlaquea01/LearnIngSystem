@@ -69,12 +69,14 @@ export class LoginRegisterComponent implements OnInit {
     await this._firebaseService.signUp(email, password);
     if(this._firebaseService.isLoggedin) {
       this.isSignedIn = true;
+      this._router.navigate(['/home']);
     }
   }
   async onSignIn(email: string, password: string) { 
     await this._firebaseService.signIn(email, password);
     if(this._firebaseService.isLoggedin) {
       this.isSignedIn = true;
+      this._router.navigate(['/home']);
     }
   }
 }
